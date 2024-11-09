@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #222;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+#game-container {
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+}
+
+#game-board {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  grid-template-rows: repeat(20, 1fr);
+  width: 100%;
+  aspect-ratio: 1;
+  background-color: #333;
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.snake {
+  background-color: #0f0;
+  animation: grow 0.3s ease-in-out;
+}
+
+@keyframes grow {
+  from { transform: scale(0.8); }
+  to { transform: scale(1); }
+}
+
+.food {
+  background-color: #f00;
+  animation: pulse 0.8s infinite alternate;
+}
+
+@keyframes pulse {
+  from { transform: scale(0.8); }
+  to { transform: scale(1); }
+}
+
+#settings {
+  margin-top: 10px;
+}
+
+#scoreboard {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+#game-over {
+  display: none;
+  font-size: 2em;
+  color: red;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hidden {
+  display: none;
+}
